@@ -12,26 +12,33 @@ those who want a solution to get started with because I noticed
 that there isn't such a solution out there.
 
 Here is a list of features included in Mini Hawraman:
-* RSS generator with iTunes metadata support
-* 2-step verification for higher security
-* Sitemap generator
-* Basic search
+* RSS with iTunes metadata
+* Multiple download types and formats for each episode
+* Comment, trackback, and pingback
+* Different content pages (e.g, about, copyright, terms of use, etc)
+* Separate fields for episode summary and description
+* Episode links
+* Spam filtering for comments and trackbacks
+* Statistics for episodes and downloads
+* HTML5 player with fallback
+* Player embedment
 * Archive
-* Separate summary and description for each episode
-* Separate field for show links
-* Separate field for guest(s) name
-* Separate field for guest(s) biography
-* Separate field for episode length
-* HTML5 player
+* Sophisticated search
+* 2-step verification
+* Security notifications
+* Thumbnail generator
+* File uploader
 
 Here is a list of features missing from original Hawraman:
-* Comment, trackback, and pingback
-* File uploader
-* Multiple downloads for each episode with different formats
-* Downloads counter
-* Advanced search
-* Thumbnail manager
-* About, copyright, terms of use, and other content pages
+* RSS with iTunes metadata
+* Statistics for episodes
+* HTML5 player
+* Archive
+* Basic search
+* Separate fields for episode summary and description
+* Episode links
+* 2-step verification
+* Security notifications
 
 In addition to these, Mini Hawraman misses the unit testing
 since the structure of the code was changed and I didn't want
@@ -52,3 +59,8 @@ code before deploying your podcast.
 I'd hope to see other programmers using this codebase to make
 it better and provide the first mature solution ever for
 podcasting on the web.
+
+I recommend you to read my blog post annoucement about
+Mini Hawraman before anything else:
+
+http://keyvan.io/mini-hawraman-goes-open-source
