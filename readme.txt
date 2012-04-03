@@ -6,10 +6,10 @@ Twitter: http://twitter.com/keyvan
 Contact Info: http://keyvan.tel
 ******************************************************************
 Mini Hawraman is a minimized and compact version of Hawraman
-podcast engine that I use for my Keyvan.FM and is released as
-an open source project for those who want a solution to get
-started with because I noticed that there isn't such a
-solution out there.
+podcast engine (running on www.keyvan.fm) that is being used
+on www.mashthis.io and is released as an open source project for
+those who want a solution to get started with because I noticed
+that there isn't such a solution out there.
 
 Here is a list of features included in Mini Hawraman:
 * RSS generator with iTunes metadata support
