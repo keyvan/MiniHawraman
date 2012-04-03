@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model MiniHawraman.Core.Models.SiteSettings
+@using (Html.BeginForm())
+{
+    <div>
+        <fieldset>
+            <legend>Site Settings</legend>
+            <p>
+                <label for="Title">
+                    Title:</label>
+                @Html.ValidationMessageFor(model => model.Title)
+                @Html.TextBox("Title")
+            </p>
+            <p>
+                <label for="Description">
+                    Description:</label>
+                @Html.ValidationMessageFor(model => model.Description)
+                @Html.TextBox("Description")
+            </p>
+            <p>
+                <label for="PageSize">
+                    Page Size:</label>
+                @Html.ValidationMessageFor(model => model.PageSize)
+                @Html.TextBox("PageSize")
+            </p>
+            <p>
+                <label for="AdminPageSize">
+                    Admin Page Size:</label>
+                @Html.ValidationMessageFor(model => model.AdminPageSize)
+                @Html.TextBox("AdminPageSize")
+            </p>
+            <input class="button" type="submit" value="Submit" />
+        </fieldset>
+    </div>
+}

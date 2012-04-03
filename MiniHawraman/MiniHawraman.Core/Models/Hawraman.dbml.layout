@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.625" name="Hawraman">
+  <DataContextMoniker Name="/HawramanDataContext" />
+  <nestedChildShapes>
+    <classShape Id="fcfea34b-7b0f-478f-a08b-60ddb34a83f3" absoluteBounds="3.5, 2.25, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/HawramanDataContext/Episode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27028683-203c-408a-bdf4-e1b6337c2224" absoluteBounds="3.515, 2.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6101ef9d-bf19-4294-932e-ddb6bf98c504" absoluteBounds="6.25, 4, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/HawramanDataContext/Comment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="486f40cc-776a-4b77-9066-0b727e83e62d" absoluteBounds="6.265, 4.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="13bf40cc-a6af-4e89-97a5-3b75c4817fbe" absoluteBounds="0.75, 7.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/HawramanDataContext/Configuration" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79b4606e-1186-4dd1-b767-1157b71589aa" absoluteBounds="0.765, 8.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="944ac720-2776-45c9-ba19-9e769f6c4c9e" absoluteBounds="6.25, 1.125, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/HawramanDataContext/Download" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5bad0533-cce5-4d15-a070-7f323c345880" absoluteBounds="6.265, 1.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1381a39a-9628-4550-9188-d2264a881850" absoluteBounds="0.75, 3, 2, 2.3478011067708331">
+      <DataClassMoniker Name="/HawramanDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec1bf459-8883-41bb-8d7c-ff98a38a207d" absoluteBounds="0.765, 3.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 5.06810628255208); (6.25 : 5.06810628255208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HawramanDataContext/Episode/Episode_Comment" />
+      <nodes>
+        <classShapeMoniker Id="fcfea34b-7b0f-478f-a08b-60ddb34a83f3" />
+        <classShapeMoniker Id="6101ef9d-bf19-4294-932e-ddb6bf98c504" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.76524983723958); (6.25 : 2.76524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HawramanDataContext/Episode/Episode_Download" />
+      <nodes>
+        <classShapeMoniker Id="fcfea34b-7b0f-478f-a08b-60ddb34a83f3" />
+        <classShapeMoniker Id="944ac720-2776-45c9-ba19-9e769f6c4c9e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.17390055338542); (3.5 : 4.17390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HawramanDataContext/User/User_Episode" />
+      <nodes>
+        <classShapeMoniker Id="1381a39a-9628-4550-9188-d2264a881850" />
+        <classShapeMoniker Id="fcfea34b-7b0f-478f-a08b-60ddb34a83f3" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

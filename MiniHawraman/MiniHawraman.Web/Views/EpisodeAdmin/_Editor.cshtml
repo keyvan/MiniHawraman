@@ -1,0 +1,53 @@
+﻿@model MiniHawraman.Core.Models.Episode
+<script type="text/javascript" src="/scripts/ckeditor/ckeditor.js"></script>
+<p>
+    <label for="Title">
+        Title:</label>
+    @Html.ValidationMessageFor(model => model.Title) @Html.TextBox("Title")
+</p>
+<p>
+    <label for="Summary">
+        Summary:</label><br />
+    @Html.ValidationMessageFor(model => model.Summary) @Html.TextArea("Summary", (string)ViewData["Summary"], 10, 150, null)
+</p>
+<p>
+    <label for="Description">
+        Description:</label>
+    @Html.ValidationMessageFor(model => model.Description) @Html.TextArea("Description", new { @class = "ckeditor" })
+</p>
+<p>
+    <label for="Duration">
+        Duration (HH:MM:SS):</label>
+    @Html.ValidationMessageFor(model => model.Duration) @Html.TextBox("Duration")
+</p>
+<p>
+    <label for="IsVideo">
+        Is Published:</label>
+    @Html.CheckBox("IsPublished")
+</p>
+<p>
+    <label for="Links">
+        Episode Links (Title | URL):</label><br />
+    @Html.TextArea("Links", (string)ViewData["Links"], 10, 150, null)
+</p>
+<p>
+    <label for="Guests">
+        Guests:</label>
+    @Html.ValidationMessageFor(model => model.Guests) @Html.TextBox("Guests")
+</p>
+<p>
+    <label for="GuestBiography">
+        Guest Biography:</label>
+    @Html.TextArea("GuestBiography", new { @class = "ckeditor" })
+</p>
+<p>
+    <label for="DownloadLink">
+        Download Link:</label>
+    @Html.ValidationMessageFor(model => model.DownloadLink) @Html.TextBox("DownloadLink")
+</p>
+<p>
+    <label for="UpdateDate">
+        Update Date:</label>
+    @Html.CheckBox("UpdateDate")
+</p>
+<input class="button" type="submit" value="Submit" />

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@model List<MiniHawraman.Core.Models.Episode>
+    <section id="main" class="clearfix">
+            <div class="layout">
+             @foreach (MiniHawraman.Core.Models.Episode episode in Model)
+             {
+                <div id="designline">
+                <h5 class="postDate">
+                    <abbr>
+                        <a href="/@episode.Slug">@episode.DateAdded.ToLongDateString()</a>
+                    </abbr>
+                </h5>
+            </div>
+            <article>
+                <div>
+                    <h2>
+                        <a href="/@episode.Slug">@episode.Title</a></h2>
+                    <p>
+                        @episode.Summary</p>
+                       
+                </div>
+            </article>
+             }
+            </div>
+    </section>

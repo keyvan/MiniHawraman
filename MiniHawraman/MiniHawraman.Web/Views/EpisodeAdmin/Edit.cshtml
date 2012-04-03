@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model MiniHawraman.Core.Models.Episode
+@using (Html.BeginForm("Edit", "EpisodeAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <fieldset>
+            <legend>Edit Content</legend>
+            @Html.Partial("_Editor", Model)
+        </fieldset>
+    </div>
+}

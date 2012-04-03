@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>@ViewData["PageTitle"]</title>
+    <link href="/Content/Admin.css" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+    <script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+    <script src="/Scripts/MicrosoftMvcValidation.js" type="text/javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+</head>
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <a href="/">
+                    <h1>
+                        @ViewData["PageTitle"]
+                    </h1>
+                </a>
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LogOn")
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Dashboard", "Index", "Admin")</li>
+                    <li>@Html.ActionLink("New Episode", "New", "EpisodeAdmin")</li>
+                    <li>@Html.ActionLink("Episodes", "Index", "EpisodeAdmin")</li>
+                    <li>@Html.ActionLink("Settings", "Index", "SiteSettings")</li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            @RenderBody()
+            <div id="footer">
+                © Copyright @DateTime.UtcNow.Year Keyvan Nayyeri. Powered by Mini Hawraman.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

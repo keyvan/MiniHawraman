@@ -1,0 +1,34 @@
+How to Install Mini Hawraman
+******************************************************************
+Requirements:
+1- A .NET 4.0 hosting environment (support for ASP.NET MVC 3.0 is
+ not needed as assemblies are embedded).
+2- A remote RavenDB server or modification of code to use an
+ embedded version for free.
+3- Knowdlege in .NET programming with C# and ASP.NET MVC in a
+ basic level in order to modify some parts of code.
+
+Important Note:
+I've tried to simplify the installation and configuration
+process as much as possible, but since this codebase is a
+modified and minimized version of a bigger codebase as a
+fast solution, there are some hardcoded parts that need
+to be modified by hand in code or HTML design.
+
+Database Setup:
+There is a small utility in MiniHawraman.DatabaseGenerator that
+can be used to generate the initial database with initial
+values. Just run the tool and follow the instructions.
+
+Application Setup:
+You need to go to Web.Config and replace the appropriate
+values inside brackets ([]) with your own. You need to have
+a Twilio account with a number, or remove this 2-step verification
+setup from the code yourself. You also need to set the connection
+string.
+
+Getting Started:
+After setting up the database and application, you can
+go to yoursite.com/admin to log in using "admin" as the
+username and the password you entered when initializing
+the database, and start using the site.

@@ -1,0 +1,7 @@
+﻿<p>
+    @Html.ActionLink("Previous", "Index", new { id = (int)ViewData["PageIndex"] + 1})
+    @if ((int)ViewData["PageIndex"] > 1)
+       {
+    @Html.ActionLink("Next", "Index", new { id = (int)ViewData["PageIndex"] - 1 })
+    }
+</p>

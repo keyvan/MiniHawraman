@@ -1,0 +1,4 @@
+﻿Sitemap: http://keyvan.fm/sitemap
+
+User-agent: *
+Disallow: /search/*

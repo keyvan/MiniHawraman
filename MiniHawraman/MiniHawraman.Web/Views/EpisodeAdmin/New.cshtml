@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("New", "EpisodeAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <fieldset>
+            <legend>New Content</legend>
+            @Html.Partial("_Editor")
+        </fieldset>
+    </div>
+}

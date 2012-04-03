@@ -1,0 +1,13 @@
+*{margin:0;padding:0}
+hr{clear:both}
+audio[controls],video{display:block}
+audio{width:328px;height:28px}
+video{width:854px;height:480px}
+code{display:block;white-space:pre;margin:0 0 10px}
+.demo-themeswitcher{float:right}
+h1{font-size:180%;margin:20px 0}
+h2{font-size:140%;margin:20px 0 10px}
+h3{font-size:120%;margin:15px 0 5px}
+h4{font-size:100%;margin:15px 0 5px}
+ul{margin:10px 0 10px 20px}
+p{margin:10px 0}

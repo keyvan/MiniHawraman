@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+}
+@model List<MiniHawraman.Core.Models.Episode>
+<div class="extra container_16 clearfix">
+    <div class="grid_16">
+        <div class="kt-box inner clearfix">
+            <h4 class="typical">
+                Search Results</h4>
+            @Html.Partial("_EpisodeList", Model)
+        </div>
+    </div>
+</div>

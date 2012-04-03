@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model IEnumerable<MiniHawraman.Core.Models.Episode>
+@using MiniHawraman.Core.Models
+<table>
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Date Added
+        </th>
+        <th>
+            Duration
+        </th>
+        <th>
+            Views
+        </th>
+        <th>
+            Episode Number
+        </th>
+        <th>
+            Is Published
+        </th>
+        <th>
+        </th>
+        <th>
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (Episode item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Title, "Permalink", new { controller = "Episode", slug = item.Slug })
+            </td>
+            <td>
+                @item.DateAdded.ToString("MMMM dd, yyyy H:mm")
+            </td>
+            <td>
+                @item.Duration
+            </td>
+            <td>
+                @item.Views
+            </td>
+            <td>
+                @item.EpisodeNumber
+            </td>
+            <td>
+                @item.IsPublished
+            </td>
+             <td>
+                @Html.ActionLink("Edit", "Edit", new { controller = "EpisodeAdmin", episodeId = item.Id })
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete",
+ new { controller = "EpisodeAdmin", episodeId = item.Id },
+                    new { onclick = "if (!window.confirm('Are you sure?')){return false;}" })
+            </td>
+        </tr>
+    }
+</table>
+@Html.Partial("_AdminPager")
