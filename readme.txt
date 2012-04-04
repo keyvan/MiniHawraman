@@ -11,7 +11,8 @@ on www.mashthis.io and is released as an open source project for
 those who want a solution to get started with because I noticed
 that there isn't such a solution out there.
 
-Here is a list of features included in Mini Hawraman:
+Here is a list of features included in Hawraman:
+
 * RSS with iTunes metadata
 * Multiple download types and formats for each episode
 * Comment, trackback, and pingback
@@ -28,8 +29,10 @@ Here is a list of features included in Mini Hawraman:
 * Security notifications
 * Thumbnail generator
 * File uploader
+* Sitemap
 
-Here is a list of features missing from original Hawraman:
+Here is a list of features in Mini Hawraman:
+
 * RSS with iTunes metadata
 * Statistics for episodes
 * HTML5 player
@@ -39,6 +42,7 @@ Here is a list of features missing from original Hawraman:
 * Episode links
 * 2-step verification
 * Security notifications
+* Sitemap
 
 In addition to these, Mini Hawraman misses the unit testing
 since the structure of the code was changed and I didn't want
