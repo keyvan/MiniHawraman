@@ -1,6 +1,11 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@section head {
+@RenderSection("head", required: false)
+}
+
 <body>
         @Html.Partial("_Header")
         @RenderBody()
