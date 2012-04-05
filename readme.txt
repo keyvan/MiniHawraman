@@ -43,6 +43,7 @@ Here is a list of features in Mini Hawraman:
 * 2-step verification
 * Security notifications
 * Sitemap
+* Facebook Open Graph
 
 In addition to these, Mini Hawraman misses the unit testing
 since the structure of the code was changed and I didn't want
