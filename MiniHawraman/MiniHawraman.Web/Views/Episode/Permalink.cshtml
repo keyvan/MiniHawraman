@@ -1,53 +1,70 @@
-﻿@{
-    Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
+﻿@model MiniHawraman.Core.Models.Episode
+@using MiniHawraman.Core.Components;
+@using System.Configuration;
+@{
+	var podcastName = ConfigurationManager.AppSettings["OpenGraphPodcastName"];
+
+	Layout = "~/Views/Shared/_SingleColumnLayout.cshtml";
 }
-@model MiniHawraman.Core.Models.Episode
-@using MiniHawraman.Core.Models
-   <section id="main" class="clearfix">
-            <div class="layout">            
-                <div id="designline">
-                <h5 class="postDate">
-                    <abbr>
-                        <a href="/@Model.Slug">@Model.DateAdded.ToLongDateString()</a>
-                    </abbr>
-                </h5>
-            </div>
-            <article>
-                <div>
-                    <h2>
-                        <a href="/@Model.Slug">@Model.Title</a></h2>
-                   
-                        @Html.Raw(Model.Description)
-                        <div align="center">
-                       <audio title="@Model.Title" controls="media-controls" preload="metadata">
-        <source src="@Model.DownloadLink" type="audio/mpeg" />
-    </audio>
-    </div>
-                    <p>
-                        <strong>Download</strong></p>
-                    <p>
-                        <a href="@Model.DownloadLink">
-                            @Model.DownloadLink</a></p>
-                    <p>
-                        <strong>Show Links</strong></p>
-                    <ul>
-                            
-            @foreach (KeyValuePair<string, string> link in Model.EpisodeLinks)
-            {
-                <li><a href="@link.Value">@link.Key</a></li>
-            }
+
+@section head {
+	<meta property="og:audio" content="@Model.DownloadLink" />
+	<meta property="og:audio:type" content="audio/mpeg" />
+
+	<meta property="og:title" content="@Model.Title" />
+	<meta property="og:type" content="music.song" />
+	<meta property="og:url" content="@EpisodeUtil.GetEpisodeUrl(Model.Slug)" />
+
+	<meta property="music:duration" content="@Model.Duration" />
+	<meta property="music:album" content="@podcastName" />
+	<meta property="music:release_date" content="@Model.DateAdded.ToString("s")" />
+}
+
+<section id="main" class="clearfix">
+			<div class="layout">            
+				<div id="designline">
+				<h5 class="postDate">
+					<abbr>
+						<a href="/@Model.Slug">@Model.DateAdded.ToLongDateString()</a>
+					</abbr>
+				</h5>
+			</div>
+			<article>
+				<div>
+					<h2>
+						<a href="/@Model.Slug">@Model.Title</a></h2>
+				   
+						@Html.Raw(Model.Description)
+						<div align="center">
+					   <audio title="@Model.Title" controls="media-controls" preload="metadata">
+		<source src="@Model.DownloadLink" type="audio/mpeg" />
+	</audio>
+	</div>
+					<p>
+						<strong>Download</strong></p>
+					<p>
+						<a href="@Model.DownloadLink">
+							@Model.DownloadLink</a></p>
+					<p>
+						<strong>Show Links</strong></p>
+					<ul>
+							
+			@foreach (KeyValuePair<string, string> link in Model.EpisodeLinks)
+			{
+				<li><a href="@link.Value">@link.Key</a></li>
+			}
    
-                       </ul>
-                </div>
-            </article>
-             
-             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script class="jwPlayer" type="application/swf" src="/scripts/jmediaelement/packages/player.swf"></script>
-    <script src="/scripts/jmediaelement/packages/mm.embed.min.js"></script>
-    <script>
-        $(function () {
-            $('audio').jmeEmbed();
-        });
-    </script>
-            </div>
-    </section>
+					   </ul>
+				</div>
+			</article>
+			 
+			 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script class="jwPlayer" type="application/swf" src="/scripts/jmediaelement/packages/player.swf"></script>
+	<script src="/scripts/jmediaelement/packages/mm.embed.min.js"></script>
+	<script>
+		$(function () {
+			$('audio').jmeEmbed();
+		});
+	</script>
+			</div>
+	</section>
