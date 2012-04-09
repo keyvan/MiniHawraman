@@ -5,35 +5,34 @@
      Design: The Minimalist (http://minimalist.co)
 
 -->
+@using System.Configuration;
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>@ViewBag.PageTitle</title>
     <meta name="description" content="@ViewBag.SiteDescription" />
-    <meta name="generator" content="Mini Hawraman Version 1.0.0.0" />
-    <meta name="keywords" content="Keyvan Nayyeri, Podcast, Audio, Programming, Software Development, Computer Science, Technology" />
+    <meta name="generator" content="Mini Hawraman" />
     <link rel="stylesheet" href="/content/css/styles.css" />
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="http://keyvan.fm/rss" />
-
-	@using System.Configuration;
-	@{
-		var facebookPageId = ConfigurationManager.AppSettings["FacebookPageId"];
-		var domainName = ConfigurationManager.AppSettings["DomainName"];
-		var siteName = ConfigurationManager.AppSettings["OpenGraphSiteName"];
-	}
-
-	@RenderSection("head", required: false);
-@if (!IsSectionDefined("head")){
-	<meta property="og:title" content="@ViewBag.PageTitle" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="@Request.Url" />
-}
-	@if (!String.IsNullOrWhiteSpace(facebookPageId)) {	<meta property="fb:page_id" content="@facebookPageId" /> }
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:site_name" content="@siteName" />
-	<meta property="og:image" content="@domainName/content/images/logo.jpg" />
-	<meta property="og:image:type" content="image/jpeg" />
-
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="@ViewBag.SiteFeed" />
+    @{
+        string facebookPageId = ConfigurationManager.AppSettings["FacebookPageId"];
+        string domainName = ConfigurationManager.AppSettings["DomainName"];
+    }
+    @RenderSection("head", required: false);
+    @if (!IsSectionDefined("head"))
+    {
+        <meta property="og:title" content="@ViewBag.PageTitle" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="@Request.Url" />
+    }
+    @if (!String.IsNullOrWhiteSpace(facebookPageId))
+    {	
+        <meta property="fb:page_id" content="@facebookPageId" />
+    }
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="@ViewBag.SiteTitle" />
+    <meta property="og:image" content="@domainName + 'content/images/logo.jpg'" />
+    <meta property="og:image:type" content="image/jpeg" />
 </head>
 @RenderBody()
 </html>

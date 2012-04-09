@@ -11,6 +11,7 @@ namespace MiniHawraman.Core.Controllers
         {
             this._siteService = blogService;
 
+            ViewBag.SiteTitle = this._siteService.Title;
             ViewBag.PageTitle = this._siteService.Title;
             ViewBag.SiteDescription = this._siteService.Description;
             ViewBag.SiteFeed = this._siteService.Feed;

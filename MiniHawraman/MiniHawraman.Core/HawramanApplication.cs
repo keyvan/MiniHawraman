@@ -138,6 +138,12 @@ namespace MiniHawraman.Core
                 );
 
             routes.MapRoute(
+                "Twitter",
+                "twitter/",
+                new { controller = "Subscription", action = "Twitter" }
+                );
+
+            routes.MapRoute(
                 "Search",
                 "search/{query}",
                 new { controller = "Search", action = "Index", query = "" }

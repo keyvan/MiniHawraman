@@ -1,1 +1,2 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Hawraman.Core.HawramanApplication" Language="C#" %>
+﻿<%@ Application CodeBehind="Global.asax.cs" Inherits="MiniHawraman.Core.HawramanApplication"
+    Language="C#" %>

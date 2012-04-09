@@ -43,5 +43,10 @@ namespace MiniHawraman.Core.Controllers
         {
             return new RedirectResult(ConfigurationManager.AppSettings["FacebookUrl"], false);
         }
+
+        public ActionResult Twitter()
+        {
+            return new RedirectResult(ConfigurationManager.AppSettings["TwitterUrl"], false);
+        }
     }
 }

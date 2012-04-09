@@ -29,7 +29,7 @@ namespace MiniHawraman.Core.Services.Implementations
         {
             get
             {
-                return string.Format("{0}feed", ConfigurationManager.AppSettings["DomainName"]);
+                return string.Format("{0}rss", ConfigurationManager.AppSettings["DomainName"]);
             }
         }
 

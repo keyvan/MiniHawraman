@@ -22,8 +22,8 @@ namespace MiniHawraman.Core.ActionResults
 
         public override void ExecuteResult(ControllerContext context)
         {
-            string authorName = "Keyvan Nayyeri";
-            string authorEmail = "i@keyvan.fm";
+            string authorName = ConfigurationManager.AppSettings["RssAuthorName"];
+            string authorEmail = ConfigurationManager.AppSettings["RssAuthorEmail"];
 
             context.HttpContext.Response.ContentType = "application/rss+xml";
 
@@ -70,12 +70,6 @@ namespace MiniHawraman.Core.ActionResults
                 // End image
                 writer.WriteEndElement();
 
-                // Categories
-                writer.WriteElementString("Category", "Technology");
-                writer.WriteElementString("Category", "Software Development");
-                writer.WriteElementString("Category", "Podcast");
-                writer.WriteElementString("Category", "Talk");
-
 
                 writer.WriteElementString("author", itunesUri, authorName);
                 writer.WriteElementString("subtitle", itunesUri, this._siteSettings.Description);
@@ -104,11 +98,11 @@ namespace MiniHawraman.Core.ActionResults
                 // First category
                 // Start itunes:category
                 writer.WriteStartElement("category", itunesUri);
-                writer.WriteAttributeString("text", "Technology");
+                writer.WriteAttributeString("text", ConfigurationManager.AppSettings["iTunesCategory"]);
 
                 // Start itunes:category
                 writer.WriteStartElement("category", itunesUri);
-                writer.WriteAttributeString("text", "Software How-To");
+                writer.WriteAttributeString("text", ConfigurationManager.AppSettings["iTunesSubCategory"]);
                 // End itunes:category
                 writer.WriteEndElement();
 
